@@ -1,4 +1,3 @@
-
 class Node {
   constructor(dataPortion, nextNode = null) {
     this.dataPortion = dataPortion;
@@ -8,7 +7,7 @@ class Node {
 
 class LinkedList {
   constructor() {
-    this.firstNode = null;
+    var firstNode = null;
     this.size = 0;
   }
 
@@ -67,23 +66,23 @@ class LinkedList {
     }
   }
 
-    removeLast() { 
-      var tailNode;
+  removeLast() {
+    var tailNode;
 
-      if (this.firstNode != null) {
-        tailNode = this.firstNode;
+    if (this.firstNode != null) {
+      tailNode = this.firstNode;
 
-        while (tailNode.nextNode != null) {
-          tailNode = tailNode.nextNode;
-          if (tailNode.nextNode.nextNode == null) {
-            tailNode.nextNode = null;
-          }
+      while (tailNode.nextNode != null) {
+        tailNode = tailNode.nextNode;
+        if (tailNode.nextNode.nextNode == null) {
+          tailNode.nextNode = null;
         }
       }
-      this.size--;
     }
+    this.size--;
+  }
 
-  size() {
+  sizeOfEntries() {
     return this.size;
   }
 
@@ -96,28 +95,28 @@ class LinkedList {
     return item;
   }
 
-
-reverse(){
+  reverse() {
     var previousNode = null;
-    while(this.firstNode !== null){
-        var nextNode = this.firstNode.nextNode;
-        this.firstNode.nextNode = previousNode;
-        previousNode= this.firstNode
-        this.firstNode = nextNode;
+    while (this.firstNode != null) {
+      var nextNode = this.firstNode.nextNode;
+      this.firstNode.nextNode = previousNode;
+      previousNode = this.firstNode;
+      this.firstNode = nextNode;
     }
     this.firstNode = previousNode;
-}
+  }
 }
 
-// const ll = new LinkedList();
-// ll.addFirst(100);
-// ll.addFirst(200);
-// ll.addFirst(300);
-// ll.addFirst(400);
-// ll.addLast(500);
-// ll.removeLast();
+//const ll = new LinkedList();
+//ll.addFirst(100);
+//ll.addFirst(200);
+//ll.addFirst(300);
+//ll.addFirst(400);
+//ll.addLast(500);
+//ll.removeFirst();
+//ll.reverse();
 //ll.removeLast();
 //contains = ll.contains(600);
 //contains = ll.indexOf(500);
 //console.log(contains);
-// console.log(ll);
+//console.log(ll);
